@@ -84,7 +84,8 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
                     FileInfo fileInfo = new FileInfo(file);
                     // check if current file/folder is hidden
                     if (fileInfo.Attributes.HasFlag(FileAttributes.Hidden) ||
-                        Path.GetFileName(file).Equals(Path.GetFileName(GlobalConfiguration.GetConversionConfiguration().GetFilesDirectory())))
+                        Path.GetFileName(file).Equals(Path.GetFileName(GlobalConfiguration.GetConversionConfiguration().GetFilesDirectory())) ||
+                        Path.GetFileName(file).Equals(".gitkeep"))
                     {
                         // ignore current file and skip to next one
                         continue;
