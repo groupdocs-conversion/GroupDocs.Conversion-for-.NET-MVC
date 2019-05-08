@@ -58,7 +58,7 @@ namespace GroupDocs.Conversion.MVC.AppDomainGenerator
             // Initiate class from the loaded assembly
             Type type = assembly.GetType(className);
             return type;
-        }        
+        }       
 
         /// <summary>
         /// Set GroupDocs.Conversion license

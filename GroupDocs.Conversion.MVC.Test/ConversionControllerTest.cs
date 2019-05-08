@@ -6,8 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
-using MvcIntegrationTestFramework.Hosting;
-using System.Threading.Tasks;
 using GroupDocs.Conversion.MVC.Controllers;
 using GroupDocs.Conversion.MVC.Products.Common.Entity.Web;
 

@@ -191,10 +191,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConversionControllerTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\src\GroupDocs.Conversion.MVC.csproj">
-      <Project>{b881fe76-330d-4b38-8524-29a439ca3d79}</Project>
+      <Project>{a33ca8b0-a193-40a3-a86a-90ff444ee878}</Project>
       <Name>GroupDocs.Conversion.MVC</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MvcContrib.TestHelper.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

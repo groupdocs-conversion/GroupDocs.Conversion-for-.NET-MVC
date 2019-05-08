@@ -1,5 +1,5 @@
 {
-  "name": "groupdocs.conversion-for-.net-mvc",
+  "name": "groupdocs.conversion-for-net-mvc",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/groupdocs-annotation/GroupDocs.conversion-for-.NET-MVC.git"
+    "url": "git+https://github.com/groupdocs-conversion/GroupDocs.Conversion-for-NET-MVC.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/groupdocs-annotation/GroupDocs.conversion-for-.NET-MVC/issues"
+    "url": "https://github.com/groupdocs-conversion/GroupDocs.Conversion-for-NET-MVC/issues"
   },
-  "homepage": "https://github.com/groupdocs-annotation/GroupDocs.conversion-for-.NET-MVC#readme",
+  "homepage": "https://github.com/groupdocs-conversion/GroupDocs.Conversion-for-NET-MVC#readme",
   "dependencies": {
     "@groupdocs.examples.jquery/common": "^0.15.0",
     "@groupdocs.examples.jquery/viewer": "^0.15.0"
