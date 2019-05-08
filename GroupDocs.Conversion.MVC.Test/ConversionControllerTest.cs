@@ -12,7 +12,7 @@ using GroupDocs.Conversion.MVC.Products.Common.Entity.Web;
 namespace GroupDocs.Conversion.MVC.Test
 {
     [TestFixture]
-    public class ConversionControllerTest
+    public static class ConversionControllerTest
     {       
 
         [SetUp]
