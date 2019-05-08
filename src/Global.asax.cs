@@ -7,7 +7,7 @@ namespace GroupDocs.Conversion.MVC
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
-        protected void Application_Start()
+        protected static void Application_Start()
         {
             // Fix required to use several GroupDocs products in one project.
             // Set GroupDocs products assemblies names          
