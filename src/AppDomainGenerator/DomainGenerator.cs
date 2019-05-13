@@ -19,7 +19,7 @@ namespace GroupDocs.Conversion.MVC.AppDomainGenerator
         {
             globalConfiguration = new Products.Common.Config.GlobalConfiguration();
             // Get assembly path
-            string assemblyPath = this.GetAssemblyPath(assemblyName);
+            string assemblyPath = GetAssemblyPath(assemblyName);
             // Initiate GroupDocs license class
             CurrentType = this.CreateDomain(assemblyName + "Domain", assemblyPath, className);
         }
@@ -29,7 +29,7 @@ namespace GroupDocs.Conversion.MVC.AppDomainGenerator
         /// </summary>
         /// <param name="assemblyName">string</param>
         /// <returns></returns>
-        private string GetAssemblyPath(string assemblyName)
+        private static string GetAssemblyPath(string assemblyName)
         {
             string path = "";
             // Get path of the executable
@@ -73,9 +73,9 @@ namespace GroupDocs.Conversion.MVC.AppDomainGenerator
         }
 
         private void SetLicense(dynamic obj) {
-            if (!String.IsNullOrEmpty(globalConfiguration.Application.LicensePath))
+            if (!String.IsNullOrEmpty(globalConfiguration.Application.GetLicensePath()))
             {
-                obj.SetLicense(globalConfiguration.Application.LicensePath);
+                obj.SetLicense(globalConfiguration.Application.GetLicensePath());
             }
         }
     }
