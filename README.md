@@ -17,10 +17,7 @@
 
 This web application demonstrates the following document manipulation capabilities:
 
-- Document viewer
-- Annotate & write on documents 
-- Digitally sign documents
-- Compare documents 
+- Document conversion
 
 **Note:** without a license application will run in trial mode, purchase [GroupDocs.Conversion for .NET license](https://purchase.groupdocs.com/order-online-step-1-of-8.aspx) or request [GroupDocs.Conversion for .NET temporary license](https://purchase.groupdocs.com/temporary-license).
 
@@ -52,7 +49,7 @@ Coming soon
 
 
 ## Features
-#### [View documents](https://github.com/groupdocs-viewer/GroupDocs.Viewer-for-.NET-MVC) with GroupDocs.Viewer
+#### [View documents](https://github.com/groupdocs-conversion/GroupDocs.Conversion-for-.NET-MVC) with GroupDocs.Conversion
 - Convert different document types to each other
 
 ## How to run
