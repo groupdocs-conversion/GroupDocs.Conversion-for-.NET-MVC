@@ -73,9 +73,9 @@ namespace GroupDocs.Conversion.MVC.AppDomainGenerator
         }
 
         private void SetLicense(dynamic obj) {
-            if (!String.IsNullOrEmpty(globalConfiguration.Application.GetLicensePath()))
+            if (!String.IsNullOrEmpty(globalConfiguration.GetApplicationConfiguration().GetLicensePath()))
             {
-                obj.SetLicense(globalConfiguration.Application.GetLicensePath());
+                obj.SetLicense(globalConfiguration.GetApplicationConfiguration().GetLicensePath());
             }
         }
     }

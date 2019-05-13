@@ -7,9 +7,9 @@ namespace GroupDocs.Conversion.MVC.Products.Common.Config
     /// </summary>
     public class GlobalConfiguration
     {
-        public ServerConfiguration Server;
-        public ApplicationConfiguration Application;
-        public CommonConfiguration Common;
+        private ServerConfiguration Server;
+        private ApplicationConfiguration Application;
+        private CommonConfiguration Common;
         private readonly ConversionConfiguration Conversion;
        
         /// <summary>
@@ -25,6 +25,21 @@ namespace GroupDocs.Conversion.MVC.Products.Common.Config
 
         public ConversionConfiguration GetConversionConfiguration() {
             return Conversion;
+        }
+
+        public ServerConfiguration GetServerConfiguration()
+        {
+            return Server;
+        }
+
+        public ApplicationConfiguration GetApplicationConfiguration()
+        {
+            return Application;
+        }
+
+        public CommonConfiguration GetCommonConfiguration()
+        {
+            return Common;
         }
     }
 }

@@ -17,7 +17,7 @@ namespace GroupDocs.Conversion.MVC.Products.Common.Config
         public bool isBrowse { get; set; }
         public bool isRewrite { get; set; }
         public bool enableRightClick { get; set; }
-        private NameValueCollection commonConfiguration = (NameValueCollection)System.Configuration.ConfigurationManager.GetSection("commonConfiguration");
+        private readonly NameValueCollection commonConfiguration = (NameValueCollection)System.Configuration.ConfigurationManager.GetSection("commonConfiguration");
 
         /// <summary>
         /// Constructor

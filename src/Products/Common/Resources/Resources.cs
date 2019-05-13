@@ -9,7 +9,11 @@ namespace GroupDocs.Conversion.MVC.Products.Common.Resources
     /// Resources
     /// </summary>
     public class Resources
-    {        
+    {
+
+        protected Resources() {
+        }
+
         /// <summary>
         /// Get free file name for uploaded file if such file already exists
         /// </summary>

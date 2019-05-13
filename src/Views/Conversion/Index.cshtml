@@ -25,12 +25,12 @@
     <div id="element"></div>
     <script type="text/javascript">
         $('#element').conversion({
-            applicationPath: 'http://@config.Server.HostAddress:@config.Server.HttpPort/conversion',           
-            download: @config.Common.isDownload.ToString().ToLowerInvariant(),
-            upload: @config.Common.isUpload.ToString().ToLowerInvariant(),           
-            browse: @config.Common.isBrowse.ToString().ToLowerInvariant(),
-            rewrite: @config.Common.isRewrite.ToString().ToLowerInvariant(),            
-            enableRightClick: @config.Common.enableRightClick.ToString().ToLowerInvariant()
+            applicationPath: 'http://@config.GetServerConfiguration().HostAddress:@config.GetServerConfiguration().HttpPort/conversion',           
+            download: @config.GetCommonConfiguration().isDownload.ToString().ToLowerInvariant(),
+            upload: @config.GetCommonConfiguration().isUpload.ToString().ToLowerInvariant(),           
+            browse: @config.GetCommonConfiguration().isBrowse.ToString().ToLowerInvariant(),
+            rewrite: @config.GetCommonConfiguration().isRewrite.ToString().ToLowerInvariant(),            
+            enableRightClick: @config.GetCommonConfiguration().enableRightClick.ToString().ToLowerInvariant()
         });
     </script>
 </body>
