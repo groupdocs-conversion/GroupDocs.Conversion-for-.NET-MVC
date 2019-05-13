@@ -48,7 +48,7 @@ namespace GroupDocs.Conversion.MVC.Products.Common.Resources
             }
             catch (System.Exception e)
             {
-                throw new Exception("Failed to get free file name", e);
+                throw new IOException("Failed to get free file name", e);
             }
             return resultFileName;
         }
@@ -74,7 +74,7 @@ namespace GroupDocs.Conversion.MVC.Products.Common.Resources
         /// <param name="ex">Exception</param>
         /// <param name="password">string</param>
         /// <returns>ExceptionEntity</returns>
-        public ExceptionEntity GenerateException(System.Exception ex, String password)
+        public static ExceptionEntity GenerateException(System.Exception ex, String password)
         {
             // Initiate exception
             ExceptionEntity exceptionEntity = new ExceptionEntity();
