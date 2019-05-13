@@ -64,7 +64,7 @@ namespace GroupDocs.Conversion.MVC.Test
                 var request = new SerialisableRequest
                 {
                     Method = "POST",
-                    RequestUri = "/loadfiletree",
+                    RequestUri = "/loadFileTree",
                     Content = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(requestData)),
                     Headers = new Dictionary<string, string>{
                         { "Content-Type", "application/json"},

@@ -2,7 +2,7 @@
 
 namespace GroupDocs.Conversion.MVC
 {
-    public static class FilterConfig
+    public class FilterConfig
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
