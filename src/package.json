@@ -18,7 +18,7 @@
   "homepage": "https://github.com/groupdocs-conversion/GroupDocs.Conversion-for-NET-MVC#readme",
   "dependencies": {
     "@groupdocs.examples.jquery/common": "^0.15.0",
-    "@groupdocs.examples.jquery/viewer": "^0.15.0"
+    "@groupdocs.examples.jquery/viewer": "^0.15.3"
   },
   "devDependencies": {
     "gulp": "^4.0.2"

@@ -123,7 +123,7 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
             }
             catch (System.Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.OK, new Resources().GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.OK, Resources.GenerateException(ex));
             }
         }
 
@@ -193,7 +193,7 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
             catch (System.Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.OK, new Resources().GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.OK, Resources.GenerateException(ex));
             }
         }
 
@@ -213,7 +213,7 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
             }
             catch (System.Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.OK, new Resources().GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.OK, Resources.GenerateException(ex));
             }
         }
 
