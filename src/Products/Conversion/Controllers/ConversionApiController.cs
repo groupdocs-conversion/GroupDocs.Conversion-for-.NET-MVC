@@ -5,6 +5,7 @@ using GroupDocs.Conversion.MVC.Products.Common.Resources;
 using GroupDocs.Conversion.MVC.Products.Common.Util.Comparator;
 using GroupDocs.Conversion.MVC.Products.Conversion.Entity.Web.Request;
 using GroupDocs.Conversion.MVC.Products.Conversion.Entity.Web.Response;
+using GroupDocs.Conversion.MVC.Products.Conversion.Filter;
 using GroupDocs.Conversion.MVC.Products.Conversion.Manager;
 using System;
 using System.Collections.Generic;
@@ -26,8 +27,7 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
     public class ConversionApiController : ApiController
     {
 
-        private readonly Common.Config.GlobalConfiguration GlobalConfiguration;
-        private readonly ConversionHandler ConversionHandler;
+        private readonly Common.Config.GlobalConfiguration GlobalConfiguration;       
         private readonly ConversionManager Manager;
         private readonly List<string> SupportedImageFormats = new List<string> { ".jp2", ".ico", ".psd", ".svg", ".bmp", ".jpeg", ".jpg", ".tiff", ".tif", ".png", ".gif", ".emf", ".wmf", ".dwg", ".dicom", ".dxf", ".jpe", ".jfif" };
 
@@ -44,7 +44,8 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
                 StoragePath = GlobalConfiguration.GetConversionConfiguration().GetFilesDirectory(),
                 OutputPath = GlobalConfiguration.GetConversionConfiguration().GetResultDirectory()
             };
-            ConversionHandler = new ConversionHandler(conversionConfig);
+
+            ConversionHandler ConversionHandler = new ConversionHandler(conversionConfig);
             Manager = new ConversionManager(ConversionHandler);
         }
 
@@ -54,7 +55,7 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
         /// <param name="postedData">Post data</param>
         /// <returns>List of files and directories</returns>
         [HttpPost]
-        [Route("loadFileTree")]
+        [Route("conversion/loadFileTree")]
         public HttpResponseMessage loadFileTree(PostedDataEntity postedData)
         {
             // get request body       
@@ -107,7 +108,7 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
                         string documentExtension = Path.GetExtension(fileDescription.name).TrimStart('.');
                         if (!String.IsNullOrEmpty(documentExtension))
                         {
-                            string[] availableConversions = ConversionHandler.GetPossibleConversions(documentExtension);
+                            string[] availableConversions = new DestinationTypesFilter().GetPosibleConversions(documentExtension);
                             //list all available conversions
                             foreach (string name in availableConversions)
                             {
@@ -122,7 +123,7 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
             }
             catch (System.Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.OK, Resources.GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.OK, new Resources().GenerateException(ex));
             }
         }
 
@@ -132,7 +133,7 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
         /// <param name="postedData">Post data</param>
         /// <returns>Uploaded document object</returns>
         [HttpPost]
-        [Route("uploadDocument")]
+        [Route("conversion/uploadDocument")]
         public HttpResponseMessage UploadDocument()
         {
             try
@@ -192,7 +193,7 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
             catch (System.Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.OK, Resources.GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.OK, new Resources().GenerateException(ex));
             }
         }
 
@@ -202,7 +203,7 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
         /// <param name="postedData">Post data</param>
         /// <returns>List of files and directories</returns>
         [HttpPost]
-        [Route("convert")]
+        [Route("conversion/convert")]
         public HttpResponseMessage Convert(ConversionPostedData postedData)
         {
             try
@@ -212,7 +213,7 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
             }
             catch (System.Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.OK, Resources.GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.OK, new Resources().GenerateException(ex));
             }
         }
 
@@ -222,7 +223,7 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
         /// <param name="path">Path of the document to download</param>
         /// <returns>Document stream as attachement</returns>
         [HttpGet]
-        [Route("downloadDocument")]
+        [Route("conversion/downloadDocument")]
         public HttpResponseMessage DownloadDocument(string path)
         {
             if (!string.IsNullOrEmpty(path))

@@ -226,6 +226,7 @@
     <Compile Include="Products\Common\Util\Parser\YamlParser.cs" />
     <Compile Include="Products\Conversion\Entity\Web\Request\ConversionPostedData.cs" />
     <Compile Include="Products\Conversion\Entity\Web\Response\ConversionTypesEntity.cs" />
+    <Compile Include="Products\Conversion\Filter\DestinationTypesFilter.cs" />
     <Compile Include="Products\Conversion\Manager\ConversionManager.cs" />
     <Compile Include="Products\Common\Util\Comparator\FileNameComparator.cs" />
     <Compile Include="Products\Common\Util\Comparator\FileTypeComparator.cs" />
@@ -395,6 +396,6 @@
     <Exec Command="..\packages\Node-Kit.11.1.0.1\node\win\node.exe ..\packages\Node-Kit.11.1.0.1\npm\bin\npm-cli.js install" Condition=" '$(OS)' == 'Windows_NT' " />
     <Exec Command="..\packages\Node-Kit.11.1.0.1\node\win\node.exe ..\packages\Node-Kit.11.1.0.1\npm\bin\npm-cli.js update" Condition=" '$(OS)' == 'Windows_NT' " />
     <Exec Command="..\packages\Node-Kit.11.1.0.1\node\win\node.exe .\node_modules\gulp\bin\gulp.js build" Condition=" '$(OS)' == 'Windows_NT' " />
-  </Target> 
+  </Target>
   <Import Project="..\packages\MSBuildTasks.1.5.0.235\build\MSBuildTasks.targets" Condition="Exists('..\packages\MSBuildTasks.1.5.0.235\build\MSBuildTasks.targets')" />
 </Project>
