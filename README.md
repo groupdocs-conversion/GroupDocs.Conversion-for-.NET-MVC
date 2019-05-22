@@ -9,9 +9,9 @@
 - .NET Framework 4.5
 - Visual Studio 2015
 
-## Document converter with Java API
+## Document converter with .NET API
 
-**GroupDocs.Conversion for Java API** is a library that allows you to **convert word to PDF, PNG, JPG** and to many other document or image formats supported by the library. Using powerful and flexible GroupDocs.Conversion API you will be able to convert multitude document formats with a wide set of different options.
+**GroupDocs.Conversion for .NET API** is a library that allows you to **convert word to PDF, PNG, JPG** and to many other document or image formats supported by the library. Using powerful and flexible GroupDocs.Conversion API you will be able to convert multitude document formats with a wide set of different options.
 
 This web application allows you to convert documents between different formats using simple modern UI. While it can be used as a standalone application it also can be integrated as part of your project.
 
