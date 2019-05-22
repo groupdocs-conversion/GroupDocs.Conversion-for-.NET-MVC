@@ -9,39 +9,27 @@
 - .NET Framework 4.5
 - Visual Studio 2015
 
+## Document converter with Java API
 
+**GroupDocs.Conversion for Java API** is a library that allows you to **convert word to PDF, PNG, JPG** and to many other document or image formats supported by the library. Using powerful and flexible GroupDocs.Conversion API you will be able to convert multitude document formats with a wide set of different options.
 
-## All-in-one document manipulation API
-
-**GroupDocs.Conversion for .NET API** is a suite of powerful, flexible and high-performance libraries which allows you to manipulate documents within your desktop solutions and web apps without requiring any other commercial application. GroupDocs.Conversion allows you to perform all kinds of operations (view, edit, annotate, sign, compare, convert, merge, search, parse, redact, etc) with **PDF, DOCX, PPT, XLS**, and over 90 other document formats.
-
-This web application demonstrates the following document manipulation capabilities:
-
-- Document conversion
+This web application allows you to convert documents between different formats using simple modern UI. While it can be used as a standalone application it also can be integrated as part of your project.
 
 **Note:** without a license application will run in trial mode, purchase [GroupDocs.Conversion for .NET license](https://purchase.groupdocs.com/order-online-step-1-of-8.aspx) or request [GroupDocs.Conversion for .NET temporary license](https://purchase.groupdocs.com/temporary-license).
 
 ## Supported document Formats
 
-| Family                      | Formats                                                                                                                            |
-| --------------------------- |:---------------------------------------------------------------------------------------------------------------------------------- |
-| Portable Document Format    | `PDF`                                                                                                                              |
-| Microsoft Word              | `DOC`, `DOCM` , `DOCX`, `DOT`, `DOTM`, `DOTX`                                                                                      |
-| Microsoft Excel             | `XLS`, `XLSB`, `XLSM`, `XLSX`, `XLT`, `XLTM`, `XLTX`                                                                               |
-| Microsoft PowerPoint        | `PPT`, `POT`, `POTM`, `POTX`, `PPS`, `PPSM`, `PPSX`, `PPTM`, `PPTX`                                                                |
-| Microsoft Visio             | `VSD`, `VDW`, `VDX`, `VSDX`, `VSS`, `VST`, `VSX`, `VTX`                                                                            |
-| Microsoft Project           | `MPP`, `MPT`                                                                                                                       |
-| Microsoft Outlook           | `EML`, `EMLX`, `MSG`                                                                                                               |
-| OpenDocument Formats        | `ODT`, `ODP`, `ODS`, `OTT`                                                                                                         |
-| Plain Text File             | `TXT`                                                                                                                              |
-| Comma-Separated Values      | `CSV`                                                                                                                              |
-| HyperText Markup Language   | `HTML`, `MHT`, `MHTML`, `SVG`                                                                                                      |
-| Extensible Markup Language  | `XML`,`XML`, `XPS`                                                                                                                 |
-| AutoCAD Drawing File Format | `DGN`, `DWG`, `DXF`                                                                                                                |
-| Image files                 | `BMP`, `CAL`, `DCX`, `DIB`, `EMF`, `GIF`, `JP2`, `JPG`, `MIL`, `MIL`, `PCD`, `PCT`, `PCX`, `PNG`, `PSD`, `RAS`, `TGA`,`TIFF`,`WMF` |
-| Electronic publication      | `EPUB`                                                                                                                             |
-| Windows Icon                | `ICO`                                                                                                                              |
-| Medical image files         | `DCM`                                                                                                                              | 
+| Document family        | Supported formats                                                         | Supported conversions                                                                                                                                |
+| ------------------------ | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Microsoft Word           | `Doc`,`Docm`,`Docx`,`Dot`,`Dotm`,`Dotx`,`Rtf`,`Txt`,`Odt`,`Ott`           | `Word to Rtf`,`Word to Txt`,`Word to Html`,`Word to Odt`,`Word to Ott`,`Word to Epub`,`Word to Pdf`,`Word to Image`,`Word to Cells`,`Word to Slides` |
+| Microsoft Excel          | `Xls`,`Xls2003`,`Xlsb`,`Xlsm`,`Xlsx`                                      | `Excel to Word`,`Excel to Pdf`,`Excel to Epub`,`Excel to Html`,`Excel to Image`,`Excel to Slides`                                                    |
+| Portable Document Format | `Pdf`                                                                     | `Pdf to Word`,`Pdf to Epub`,`Pdf to Html`,`Pdf to Image`,`Pdf to Cells`,`Pdf to Slides`                                                              |
+| Microsoft PowerPoint     | `Ppt`,`Pps`,`Pptx`,`Ppsx`,`Odp`                                           | `Slides to Word`,`Slides to Pdf`,`Slides to Epub`,`Slides to Html`,`Slides to Image`,`Slides to Excel`                                               |
+| Microsoft Visio          | `Vsd`,`Vsdx`,`Vss`,`Vst`,`Vsx`,`Vtx`,`Vdw`,`Vdx`,`Svg`                    | `Visio to Word`,`Visio to Pdf`,`Visio to Epub`,`Visio to Html`,`Visio to Image`,`Visio to Excel`,`Visio to Slides`                                   |
+| Microsoft Project        | `Mpt`,`Mpp`                                                               | `Tasks to Word`,`Tasks to Pdf`,`Tasks to Epub`,`Tasks to Html`,`Tasks to Image`,`Tasks to Excel`,`Tasks to Slides`                                   |
+| HTML                     | `Html`                                                                    | `Html to Word`,`Html to Pdf`,`Html to Epub`,`Html to Cells`,`Html to Slides`                                                                         |
+| Images                   | `Xps`,`Tiff`,`Tif`,`Jpeg`,`Jpg`,`Png`,`Gif`,`Bmp`,`Ico`,`Dxf`,`Dwg`,`Psd` | `Image to Word`,`Image to Pdf`,`Image to Epub`,`Image to Html`,`Image to Image`,`Image to Cells`,`Image to Slides`                                   | 
+
 
 
 ## Demo Video
@@ -49,8 +37,18 @@ Coming soon
 
 
 ## Features
-#### [View documents](https://github.com/groupdocs-conversion/GroupDocs.Conversion-for-.NET-MVC) with GroupDocs.Conversion
-- Convert different document types to each other
+
+- Clean, modern and intuitive design
+- Easily switchable colour theme (create your own colour theme in 5 minutes)
+- Responsive design
+- Convert individual documents
+- Batch convert multiple files
+- Mobile support (open application on any mobile device)
+- HTML and image modes
+- Drag and Drop support
+- Upload documents
+- Cross-browser support (Safari, Chrome, Opera, Firefox)
+- Cross-platform support (Windows, Linux, MacOS)
 
 ## How to run
 
