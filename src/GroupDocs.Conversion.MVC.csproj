@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B881FE76-330D-4B38-8524-29A439CA3D79}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GroupDocs.Conversion.MVC</RootNamespace>
+    <AssemblyName>GroupDocs.Conversion.MVC</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.3.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GroupDocs.Annotation, Version=19.3.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\GroupDocs.Annotation.19.3.0\lib\GroupDocs.Annotation.dll</HintPath>
+    </Reference>
+    <Reference Include="GroupDocs.Comparison, Version=19.3.1.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\GroupDocs.Comparison.19.3.1\lib\GroupDocs.Comparison.dll</HintPath>
+    </Reference>
+    <Reference Include="GroupDocs.Conversion, Version=19.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\GroupDocs.Conversion.19.4.0\lib\GroupDocs.Conversion.dll</HintPath>
+    </Reference>
+    <Reference Include="GroupDocs.Signature, Version=19.1.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\GroupDocs.Signature.19.1.0\lib\GroupDocs.Signature.dll</HintPath>
+    </Reference>
+    <Reference Include="GroupDocs.Viewer, Version=19.3.1.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\GroupDocs.Viewer.19.3.1\lib\GroupDocs.Viewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Moq, Version=4.10.0.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.10.1\lib\net45\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.5\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.1\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.5\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.5\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Abstractions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="YamlDotNet, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YamlDotNet.5.2.1\lib\net45\YamlDotNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppDomainGenerator\DomainGenerator.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ConversionController.cs" />
+    <Compile Include="Products\Common\Config\ApplicationConfiguration.cs" />
+    <Compile Include="Products\Common\Config\ConfigurationValuesGetter.cs" />
+    <Compile Include="Products\Common\Config\GlobalConfiguration.cs" />
+    <Compile Include="Products\Common\Config\ServerConfiguration.cs" />
+    <Compile Include="Products\Common\Config\CommonConfiguration.cs" />
+    <Compile Include="Products\Common\Entity\Web\LoadDocumentEntity.cs" />
+    <Compile Include="Products\Common\Entity\Web\PageDescriptionEntity.cs" />
+    <Compile Include="Products\Common\Entity\Web\ExceptionEntity.cs" />
+    <Compile Include="Products\Common\Entity\Web\FileDescriptionEntity.cs" />
+    <Compile Include="Products\Common\Entity\Web\UploadedDocumentEntity.cs" />
+    <Compile Include="Products\Common\Resources\Resources.cs" />
+    <Compile Include="Products\Common\Util\Comparator\FileDateComparator.cs" />
+    <Compile Include="Products\Common\Util\Parser\YamlParser.cs" />
+    <Compile Include="Products\Conversion\Entity\Web\Request\ConversionPostedData.cs" />
+    <Compile Include="Products\Conversion\Entity\Web\Response\ConversionTypesEntity.cs" />
+    <Compile Include="Products\Conversion\Filter\DestinationTypesFilter.cs" />
+    <Compile Include="Products\Conversion\Manager\ConversionManager.cs" />
+    <Compile Include="Products\Common\Util\Comparator\FileNameComparator.cs" />
+    <Compile Include="Products\Common\Util\Comparator\FileTypeComparator.cs" />
+    <Compile Include="Products\Common\Util\Directory\IDirectoryUtils.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Products\Conversion\Config\ConversionConfiguration.cs" />
+    <Compile Include="Products\Conversion\Controllers\ConversionApiController.cs" />
+    <Compile Include="Products\Common\Entity\Web\PostedDataEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Resources\common\css\circle-progress.css" />
+    <Content Include="Resources\common\css\font-awesome.min.css" />
+    <Content Include="Resources\common\css\images\ui-icons_444444_256x240.png" />
+    <Content Include="Resources\common\css\images\ui-icons_555555_256x240.png" />
+    <Content Include="Resources\common\css\images\ui-icons_777620_256x240.png" />
+    <Content Include="Resources\common\css\images\ui-icons_777777_256x240.png" />
+    <Content Include="Resources\common\css\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Resources\common\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Resources\common\css\jquery-ui.min.css" />
+    <Content Include="Resources\common\css\swiper.min.css" />
+    <Content Include="Resources\common\fonts\fontawesome-webfont.svg" />
+    <Content Include="Resources\common\images\banner.png" />
+    <Content Include="Resources\common\js\es6-promise.auto.js" />
+    <Content Include="Resources\common\js\jquery-ui.min.js" />
+    <Content Include="Resources\common\js\jquery.initialize.min.js" />
+    <Content Include="Resources\common\js\jquery.min.js" />
+    <Content Include="Resources\common\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="Resources\common\js\swiper.min.js" />
+    <Content Include="Resources\comparison\css\all.css" />
+    <Content Include="Resources\comparison\css\comparison.css" />
+    <Content Include="Resources\comparison\css\comparison.mobile.css" />
+    <Content Include="Resources\comparison\images\logo.png" />
+    <Content Include="Resources\comparison\js\comparison.js" />
+    <Content Include="Resources\comparison\webfonts\fa-brands-400.svg" />
+    <Content Include="Resources\comparison\webfonts\fa-regular-400.svg" />
+    <Content Include="Resources\comparison\webfonts\fa-solid-900.svg" />
+    <Content Include="Resources\signature\css\bcPaint.css" />
+    <Content Include="Resources\signature\css\bcPaint.mobile.css" />
+    <Content Include="Resources\signature\css\bcPicker.css" />
+    <Content Include="Resources\signature\css\opticalCodeGenerator.css" />
+    <Content Include="Resources\signature\css\signature.css" />
+    <Content Include="Resources\signature\css\signature.mobile.css" />
+    <Content Include="Resources\signature\css\stampGenerator.css" />
+    <Content Include="Resources\signature\css\textGenerator.css" />
+    <Content Include="Resources\signature\images\banner.png" />
+    <Content Include="Resources\signature\images\logo.png" />
+    <Content Include="Resources\signature\js\bcPaint.js" />
+    <Content Include="Resources\signature\js\bcPicker.js" />
+    <Content Include="Resources\signature\js\opticalCodeGenerator.js" />
+    <Content Include="Resources\signature\js\rotatable.js" />
+    <Content Include="Resources\signature\js\signature.js" />
+    <Content Include="Resources\signature\js\stampGenerator.js" />
+    <Content Include="Resources\signature\js\textGenerator.js" />
+    <Content Include="Resources\total\css\total.css" />
+    <Content Include="Resources\total\images\groupdocs-annotation-d.png" />
+    <Content Include="Resources\total\images\groupdocs-annotation.png" />
+    <Content Include="Resources\total\images\groupdocs-assembly-d.png" />
+    <Content Include="Resources\total\images\groupdocs-assembly.png" />
+    <Content Include="Resources\total\images\groupdocs-comparison-d.png" />
+    <Content Include="Resources\total\images\groupdocs-comparison.png" />
+    <Content Include="Resources\total\images\groupdocs-conversion-d.png" />
+    <Content Include="Resources\total\images\groupdocs-conversion.png" />
+    <Content Include="Resources\total\images\groupdocs-editor-d.png" />
+    <Content Include="Resources\total\images\groupdocs-editor.png" />
+    <Content Include="Resources\total\images\groupdocs-metadata-d.png" />
+    <Content Include="Resources\total\images\groupdocs-metadata.png" />
+    <Content Include="Resources\total\images\groupdocs-search-d.png" />
+    <Content Include="Resources\total\images\groupdocs-search.png" />
+    <Content Include="Resources\total\images\groupdocs-signature-d.png" />
+    <Content Include="Resources\total\images\groupdocs-signature.png" />
+    <Content Include="Resources\total\images\groupdocs-text-d.png" />
+    <Content Include="Resources\total\images\groupdocs-text.png" />
+    <Content Include="Resources\total\images\groupdocs-viewer-d.png" />
+    <Content Include="Resources\total\images\groupdocs-viewer.png" />
+    <Content Include="Resources\total\images\groupdocs-watermark-d.png" />
+    <Content Include="Resources\total\images\groupdocs-watermark.png" />
+    <Content Include="Resources\viewer\css\viewer-dark.css" />
+    <Content Include="Resources\viewer\css\viewer-light.css" />
+    <Content Include="Resources\viewer\css\viewer.css" />
+    <Content Include="Resources\viewer\css\viewer.mobile.css" />
+    <Content Include="Resources\viewer\images\logo.png" />
+    <Content Include="Resources\viewer\js\viewer.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\common\fonts\fontawesome-webfont.eot" />
+    <Content Include="Resources\common\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Resources\common\fonts\fontawesome-webfont.woff" />
+    <Content Include="Resources\common\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Resources\common\fonts\FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\comparison\webfonts\fa-brands-400.eot" />
+    <Content Include="Resources\comparison\webfonts\fa-brands-400.ttf" />
+    <Content Include="Resources\comparison\webfonts\fa-brands-400.woff" />
+    <Content Include="Resources\comparison\webfonts\fa-brands-400.woff2" />
+    <Content Include="Resources\comparison\webfonts\fa-regular-400.eot" />
+    <Content Include="Resources\comparison\webfonts\fa-regular-400.ttf" />
+    <Content Include="Resources\comparison\webfonts\fa-regular-400.woff" />
+    <Content Include="Resources\comparison\webfonts\fa-regular-400.woff2" />
+    <Content Include="Resources\comparison\webfonts\fa-solid-900.eot" />
+    <Content Include="Resources\comparison\webfonts\fa-solid-900.ttf" />
+    <Content Include="Resources\comparison\webfonts\fa-solid-900.woff" />
+    <Content Include="Resources\comparison\webfonts\fa-solid-900.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Conversion\Index.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50289</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8080/conversion</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\MSBuildTasks.1.5.0.235\build\MSBuildTasks.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSBuildTasks.1.5.0.235\build\MSBuildTasks.targets'))" />
+  </Target>
+  <Target Name="BeforeBuild">
+    <Exec Command="..\packages\Node-Kit.11.1.0.1\node\win\node.exe ..\packages\Node-Kit.11.1.0.1\npm\bin\npm-cli.js install" Condition=" '$(OS)' == 'Windows_NT' " />
+    <Exec Command="..\packages\Node-Kit.11.1.0.1\node\win\node.exe ..\packages\Node-Kit.11.1.0.1\npm\bin\npm-cli.js update" Condition=" '$(OS)' == 'Windows_NT' " />
+    <Exec Command="..\packages\Node-Kit.11.1.0.1\node\win\node.exe .\node_modules\gulp\bin\gulp.js build" Condition=" '$(OS)' == 'Windows_NT' " />
+  </Target>
+  <Import Project="..\packages\MSBuildTasks.1.5.0.235\build\MSBuildTasks.targets" Condition="Exists('..\packages\MSBuildTasks.1.5.0.235\build\MSBuildTasks.targets')" />
+</Project>
