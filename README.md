@@ -66,7 +66,7 @@ git clone https://github.com/groupdocs-conversion/GroupDocs.Conversion-for-.NET-
 Open solution in the VisualStudio.
 Update common parameters in `web.config` and example related properties in the `configuration.yml` to meet your requirements.
 
-Open http://localhost:8080/ in your favorite browser
+Open http://localhost:8080/conversion in your favorite browser
 
 #### Docker image
 Use [docker image](https://hub.docker.com/u/groupdocs).
@@ -75,7 +75,7 @@ Use [docker image](https://hub.docker.com/u/groupdocs).
 mkdir DocumentSamples
 mkdir Licenses
 docker run -p 8080:8080 --env application.hostAddress=localhost -v `pwd`/DocumentSamples:/home/groupdocs/app/DocumentSamples -v `pwd`/Licenses:/home/groupdocs/app/Licenses groupdocs/conversion
-## Open http://localhost:8080/ in your favorite browser.
+## Open http://localhost:8080/conversion in your favorite browser.
 ```
 
 ## License
