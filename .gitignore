@@ -1,18 +1,33 @@
-/packages
-/.vs
-/src/GroupDocs.Conversion.MVC.csproj.user
-bin
-obj
+# Tool Runtime Dir
+packages/
+node_modules/
+
+# Visual Studio
+.vs/
+
+# User-specific files
+*.user
+
+# Build results
+[Bb]in/
+[Oo]bj/
+*.zip
+package-lock.json
+
+# Resources
 src/Resources/*
 !src/Resources/.gitkeep
-/src/package-lock.json
-/src/Web.Debug.config
-/src/Web.Release.config
-/GroupDocs.Conversion.MVC.Test/GroupDocs.Conversion.MVC.Test.csproj.user
-/GroupDocs.Conversion.MVC.Test/bin
-/GroupDocs.Conversion.MVC.Test/obj
-src/client/package-lock.json
-src/DocumentSamples
-!src/DocumentSamples/Conversion/.gitkeep
+
+# Licenses
 src/Licenses
 !src/Licenses/.gitkeep
+
+# Document samples
+src/DocumentSamples
+!src/DocumentSamples/.gitkeep
+
+# Git
+!.gitkeep
+
+# Finder in OSX
+.DS_Store
