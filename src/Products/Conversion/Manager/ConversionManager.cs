@@ -1,6 +1,7 @@
-﻿using GroupDocs.Conversion.Handler;
+﻿using GroupDocs.Conversion.Contracts;
+using GroupDocs.Conversion.FileTypes;
 using GroupDocs.Conversion.MVC.Products.Conversion.Entity.Web.Request;
-using GroupDocs.Conversion.Options.Save;
+using GroupDocs.Conversion.Options.Convert;
 using System.Collections.Generic;
 using System.IO;
 
@@ -8,50 +9,64 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Manager
 {
     public class ConversionManager
     {
-
-        private readonly ConversionHandler conversionHandler;
-
-        public ConversionManager(ConversionHandler conversionHandler)
-        {
-            this.conversionHandler = conversionHandler;
-        }
-
-        public void Convert(ConversionPostedData postedData)
+        public void Convert(ConversionPostedData postedData, Common.Config.GlobalConfiguration globalConfiguration, List<string> supportedImageFormats)
         {
             string sourceType = Path.GetExtension(postedData.guid).TrimStart('.');
             string destinationType = postedData.GetDestinationType();
-            string resultFileName = Path.GetFileNameWithoutExtension(postedData.guid) + "." + postedData.GetDestinationType();
-            dynamic saveOptions = GetSaveOptions(sourceType, destinationType);
+            string documentGuid = postedData.guid;
+            string filesDirectory = globalConfiguration.GetConversionConfiguration().GetResultDirectory();
+            string outputFile = Path.Combine(filesDirectory, Path.GetFileNameWithoutExtension(documentGuid) + "." + postedData.GetDestinationType());
+            string destDocumentType = supportedImageFormats.Contains(Path.GetExtension("." + destinationType)) ? "image" : postedData.GetDestDocumentType();
+            string fileNameWoExt = Path.GetFileNameWithoutExtension(postedData.guid);
 
-            ConvertedDocument convertedDocument = conversionHandler.Convert(postedData.guid, saveOptions);
-
-            if (convertedDocument.PageCount > 1 && saveOptions is ImageSaveOptions)
+            using (Converter converter = new Converter(postedData.guid))
             {
-                for (int i = 1; i <= convertedDocument.PageCount; i++)
+                var convertOptions = GetConvertOptions(destDocumentType, destinationType);
+
+                var documentInfo = converter.GetDocumentInfo();
+
+                if (documentInfo.PagesCount > 1 && convertOptions is ImageConvertOptions)
                 {
-                    string fileName = Path.GetFileNameWithoutExtension(resultFileName) + "-page" + i + "." + Path.GetExtension(resultFileName);
-                    convertedDocument.Save(fileName, i);
+                    string outputFileTemplate = Path.Combine(filesDirectory, fileNameWoExt + "-{0}." + destinationType);
+                    SavePageStream getPageStream = page => new FileStream(string.Format(outputFileTemplate, page), FileMode.Create);
+                    converter.Convert(getPageStream, convertOptions);
                 }
-            }
-            else
-            {
-                convertedDocument.Save(resultFileName);
+                else
+                {
+                    converter.Convert(outputFile, convertOptions);
+                }
             }
         }
 
-        private SaveOptions GetSaveOptions(string sourceType, string destinationType)
+        private ConvertOptions GetConvertOptions(string destDocumentType, string destinationType)
         {
-            dynamic saveOptions = null;
-            Dictionary<string, SaveOptions> availableConversions = conversionHandler.GetSaveOptions(sourceType);
-            //list all available conversions
-            foreach (var conversion in availableConversions)
+            ConvertOptions convertOptions;
+
+            switch (destDocumentType)
             {
-                if (conversion.Key.Equals(destinationType))
-                {
-                    saveOptions = conversion.Value;
-                }
+                case "Portable Document Format":
+                    convertOptions = new PdfConvertOptions();
+                    break;
+                case "Microsoft Word":
+                    convertOptions = new WordProcessingConvertOptions();
+                    break;
+                case "Microsoft PowerPoint":
+                    convertOptions = new PresentationConvertOptions();
+                    break;
+                case "image":
+                    convertOptions = new ImageConvertOptions();
+                    break;
+                case "Microsoft Excel":
+                    convertOptions = new SpreadsheetConvertOptions();
+                    break;
+                default:
+                    convertOptions = new WordProcessingConvertOptions();
+                    break;
             }
-            return saveOptions;
+
+            convertOptions.Format = FileType.FromExtension(destinationType);
+
+            return convertOptions;
         }
     }
 }

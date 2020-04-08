@@ -1,6 +1,4 @@
-﻿using GroupDocs.Conversion.Config;
-using GroupDocs.Conversion.Handler;
-using GroupDocs.Conversion.MVC.Products.Common.Entity.Web;
+﻿using GroupDocs.Conversion.MVC.Products.Common.Entity.Web;
 using GroupDocs.Conversion.MVC.Products.Common.Resources;
 using GroupDocs.Conversion.MVC.Products.Common.Util.Comparator;
 using GroupDocs.Conversion.MVC.Products.Conversion.Config;
@@ -28,27 +26,9 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
     public class ConversionApiController : ApiController
     {
 
-        private readonly Common.Config.GlobalConfiguration GlobalConfiguration;       
-        private readonly ConversionManager Manager;
+        private readonly Common.Config.GlobalConfiguration GlobalConfiguration = new Common.Config.GlobalConfiguration();       
+        private readonly ConversionManager Manager = new ConversionManager();
         private readonly List<string> SupportedImageFormats = new List<string> { ".jp2", ".ico", ".psd", ".svg", ".bmp", ".jpeg", ".jpg", ".tiff", ".tif", ".png", ".gif", ".emf", ".wmf", ".dwg", ".dicom", ".dxf", ".jpe", ".jfif" };
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public ConversionApiController()
-        {
-            // Check if filesDirectory is relative or absolute path           
-            GlobalConfiguration = new Common.Config.GlobalConfiguration();
-            // Setup Conversion configuration
-            var conversionConfig = new ConversionConfig
-            {
-                StoragePath = GlobalConfiguration.GetConversionConfiguration().GetFilesDirectory(),
-                OutputPath = GlobalConfiguration.GetConversionConfiguration().GetResultDirectory()
-            };
-
-            ConversionHandler ConversionHandler = new ConversionHandler(conversionConfig);
-            Manager = new ConversionManager(ConversionHandler);
-        }
 
         /// <summary>
         /// Load Conversion configuration
@@ -220,7 +200,7 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
         {
             try
             {
-                Manager.Convert(postedData);
+                Manager.Convert(postedData, GlobalConfiguration, SupportedImageFormats);
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
             catch (System.Exception ex)
