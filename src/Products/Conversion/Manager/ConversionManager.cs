@@ -56,6 +56,9 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Manager
                 case "image":
                     convertOptions = new ImageConvertOptions();
                     break;
+                case "Comma-Separated Values":
+                    convertOptions = new SpreadsheetConvertOptions();
+                    break;
                 case "Microsoft Excel":
                     convertOptions = new SpreadsheetConvertOptions();
                     break;
