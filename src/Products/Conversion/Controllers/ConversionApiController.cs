@@ -25,7 +25,6 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ConversionApiController : ApiController
     {
-
         private readonly Common.Config.GlobalConfiguration GlobalConfiguration = new Common.Config.GlobalConfiguration();       
         private readonly ConversionManager Manager = new ConversionManager();
         private readonly List<string> SupportedImageFormats = new List<string> { ".jp2", ".ico", ".psd", ".svg", ".bmp", ".jpeg", ".jpg", ".tiff", ".tif", ".png", ".gif", ".emf", ".wmf", ".dwg", ".dicom", ".dxf", ".jpe", ".jfif" };
@@ -50,7 +49,7 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
         [Route("loadFileTree")]
         public HttpResponseMessage loadFileTree(PostedDataEntity postedData)
         {
-            // get request body       
+            // get request body
             string relDirPath = postedData.path;
             // get file list from storage path
             try
@@ -78,6 +77,7 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
                     // check if current file/folder is hidden
                     if (fileInfo.Attributes.HasFlag(FileAttributes.Hidden) ||
                         Path.GetFileName(file).Equals(Path.GetFileName(GlobalConfiguration.GetConversionConfiguration().GetFilesDirectory())) ||
+                        Path.GetFileName(file).Equals(Path.GetFileName(GlobalConfiguration.GetConversionConfiguration().GetResultDirectory())) ||
                         Path.GetFileName(file).Equals(".gitkeep"))
                     {
                         // ignore current file and skip to next one
