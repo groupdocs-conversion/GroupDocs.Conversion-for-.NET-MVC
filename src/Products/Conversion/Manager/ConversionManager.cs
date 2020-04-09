@@ -25,9 +25,16 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Manager
 
                 var documentInfo = converter.GetDocumentInfo();
 
-                if (documentInfo.PagesCount > 1 && convertOptions is ImageConvertOptions)
+                if (convertOptions is ImageConvertOptions)
                 {
                     string outputFileTemplate = Path.Combine(filesDirectory, fileNameWoExt + "-{0}." + destinationType);
+
+                    if ((documentInfo is SpreadsheetDocumentInfo && ((SpreadsheetDocumentInfo)documentInfo).WorksheetsCount == 1)
+                        || documentInfo.PagesCount == 1)
+                    {
+                        outputFileTemplate = Path.Combine(filesDirectory, fileNameWoExt + "." + destinationType);
+                    }
+
                     SavePageStream getPageStream = page => new FileStream(string.Format(outputFileTemplate, page), FileMode.Create);
                     converter.Convert(getPageStream, convertOptions);
                 }

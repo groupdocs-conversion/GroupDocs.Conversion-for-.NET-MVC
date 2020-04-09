@@ -226,7 +226,6 @@
     <Compile Include="Products\Common\Util\Parser\YamlParser.cs" />
     <Compile Include="Products\Conversion\Entity\Web\Request\ConversionPostedData.cs" />
     <Compile Include="Products\Conversion\Entity\Web\Response\ConversionTypesEntity.cs" />
-    <Compile Include="Products\Conversion\Filter\DestinationTypesFilter.cs" />
     <Compile Include="Products\Conversion\Manager\ConversionManager.cs" />
     <Compile Include="Products\Common\Util\Comparator\FileNameComparator.cs" />
     <Compile Include="Products\Common\Util\Comparator\FileTypeComparator.cs" />

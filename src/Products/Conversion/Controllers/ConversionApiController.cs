@@ -1,10 +1,10 @@
-﻿using GroupDocs.Conversion.MVC.Products.Common.Entity.Web;
+﻿using GroupDocs.Conversion.Contracts;
+using GroupDocs.Conversion.MVC.Products.Common.Entity.Web;
 using GroupDocs.Conversion.MVC.Products.Common.Resources;
 using GroupDocs.Conversion.MVC.Products.Common.Util.Comparator;
 using GroupDocs.Conversion.MVC.Products.Conversion.Config;
 using GroupDocs.Conversion.MVC.Products.Conversion.Entity.Web.Request;
 using GroupDocs.Conversion.MVC.Products.Conversion.Entity.Web.Response;
-using GroupDocs.Conversion.MVC.Products.Conversion.Filter;
 using GroupDocs.Conversion.MVC.Products.Conversion.Manager;
 using System;
 using System.Collections.Generic;
@@ -100,7 +100,7 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
                         string documentExtension = Path.GetExtension(fileDescription.name).TrimStart('.');
                         if (!String.IsNullOrEmpty(documentExtension))
                         {
-                            string[] availableConversions = new DestinationTypesFilter().GetPosibleConversions(documentExtension);
+                            string[] availableConversions = GetPosibleConversions(documentExtension);
                             //list all available conversions
                             foreach (string name in availableConversions)
                             {
@@ -117,6 +117,21 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
             {
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, Resources.GenerateException(ex));
             }
+        }
+
+        private static string[] GetPosibleConversions(string documentExtension)
+        {
+            PossibleConversions conversions = Converter.GetPossibleConversions(documentExtension);
+            var conversionsFormats = new List<string>();
+
+            foreach (var conversion in conversions.All)
+            {
+                conversionsFormats.Add(conversion.Format.Extension);
+            }
+
+            conversionsFormats.Sort();
+
+            return conversionsFormats.ToArray();
         }
 
         /// <summary>
