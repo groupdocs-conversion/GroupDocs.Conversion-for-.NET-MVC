@@ -26,7 +26,6 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
     public class ConversionApiController : ApiController
     {
         private readonly Common.Config.GlobalConfiguration GlobalConfiguration = new Common.Config.GlobalConfiguration();       
-        private readonly ConversionManager Manager = new ConversionManager();
         private readonly List<string> SupportedImageFormats = new List<string> { ".jp2", ".ico", ".psd", ".svg", ".bmp", ".jpeg", ".jpg", ".tiff", ".tif", ".png", ".gif", ".emf", ".wmf", ".dwg", ".dicom", ".dxf", ".jpe", ".jfif" };
 
         /// <summary>
@@ -85,12 +84,14 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
                     }
                     else
                     {
-                        ConversionTypesEntity fileDescription = new ConversionTypesEntity();
-                        fileDescription.conversionTypes = new List<string>();
-                        fileDescription.guid = Path.GetFullPath(file);
-                        fileDescription.name = Path.GetFileName(file);
-                        // set is directory true/false
-                        fileDescription.isDirectory = fileInfo.Attributes.HasFlag(FileAttributes.Directory);
+                        ConversionTypesEntity fileDescription = new ConversionTypesEntity
+                        {
+                            conversionTypes = new List<string>(),
+                            guid = Path.GetFullPath(file),
+                            name = Path.GetFileName(file),
+                            // set is directory true/false
+                            isDirectory = fileInfo.Attributes.HasFlag(FileAttributes.Directory)
+                        };
                         // set file size
                         if (!fileDescription.isDirectory)
                         {
@@ -98,7 +99,7 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
                         }
 
                         string documentExtension = Path.GetExtension(fileDescription.name).TrimStart('.');
-                        if (!String.IsNullOrEmpty(documentExtension))
+                        if (!string.IsNullOrEmpty(documentExtension))
                         {
                             string[] availableConversions = GetPosibleConversions(documentExtension);
                             //list all available conversions
@@ -215,7 +216,7 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Controllers
         {
             try
             {
-                Manager.Convert(postedData, GlobalConfiguration, SupportedImageFormats);
+                ConversionManager.Convert(postedData, GlobalConfiguration, SupportedImageFormats);
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
             catch (System.Exception ex)

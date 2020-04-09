@@ -7,11 +7,10 @@ using System.IO;
 
 namespace GroupDocs.Conversion.MVC.Products.Conversion.Manager
 {
-    public class ConversionManager
+    public static class ConversionManager
     {
-        public void Convert(ConversionPostedData postedData, Common.Config.GlobalConfiguration globalConfiguration, List<string> supportedImageFormats)
+        public static void Convert(ConversionPostedData postedData, Common.Config.GlobalConfiguration globalConfiguration, List<string> supportedImageFormats)
         {
-            string sourceType = Path.GetExtension(postedData.guid).TrimStart('.');
             string destinationType = postedData.GetDestinationType();
             string documentGuid = postedData.guid;
             string filesDirectory = globalConfiguration.GetConversionConfiguration().GetResultDirectory();
@@ -45,7 +44,7 @@ namespace GroupDocs.Conversion.MVC.Products.Conversion.Manager
             }
         }
 
-        private ConvertOptions GetConvertOptions(string destDocumentType, string destinationType)
+        private static ConvertOptions GetConvertOptions(string destDocumentType, string destinationType)
         {
             ConvertOptions convertOptions;
 
