@@ -2,8 +2,6 @@
 # GroupDocs.Conversion for .NET MVC Example
 ###### version 0.1.0
 
-[![Build status](https://ci.appveyor.com/api/projects/status/dl03chqh21wwkysj/branch/master?svg=true)](https://ci.appveyor.com/project/egorovpavel/groupdocs-conversion-for-net-mvc/branch/master)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2b18e93ff07c440a98b70dd84f1b6ebb)](https://www.codacy.com/app/GroupDocs/GroupDocs.Conversion-for-.NET-MVC?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=groupdocs-conversion/GroupDocs.Conversion-for-.NET-MVC&amp;utm_campaign=Badge_Grade)
 [![GitHub license](https://img.shields.io/github/license/groupdocs-conversion/GroupDocs.Conversion-for-.NET-MVC.svg)](https://github.com/groupdocs-conversion/GroupDocs.Conversion-for-.NET-MVC/blob/master/LICENSE)
 
 :warning: **This repository has moved to https://github.com/groupdocs-conversion/GroupDocs.Conversion-for-.NET/tree/master/Demos/MVC**
